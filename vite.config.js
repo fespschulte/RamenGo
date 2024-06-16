@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
+    base: '/RamenGo/',
     root: './',
     build: {
         outDir: 'dist',
