@@ -328,5 +328,133 @@ main p {
   font-weight: 500;
   margin-bottom: 3.2rem;
 }
+
+@media (max-width: 768px) {
+  .logo {
+    z-index: 1;
+    width: 34.7%;
+    left: 50%;
+    top: 3.6rem;
+    transform: translate(-50%, -50%);
   }
-}
+  
+  header .hero-content {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    padding-top: 5.2rem;
+  }
+  
+  header .hero-title {
+    flex-direction: column;
+    align-items: center;
+  }
+  header .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header h1 {
+    font-size: 12rem;
+    line-height: 10rem;
+  }
+  
+  header h2 {
+    writing-mode: horizontal-tb;
+    text-align: center;
+    color: var(--color-yellow);
+    font-weight: 900;
+  }
+  
+  header p {
+    padding: 0;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    max-width: 70%;
+  }
+  
+  .hero-image {
+    position: relative; 
+    width: 26.9rem;
+    height: 26.506rem;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .hero-image img {
+    position: absolute;
+  }
+  
+  .ellipse-brown {
+    z-index: 0;
+    width: 23.19rem;
+    height: 23.19rem;
+  }
+  
+  .delivery-woman {
+    z-index: 1;
+    width: 26.23rem;
+    height: 26.9rem;
+    left: 0rem;
+    animation: rotate 4s infinite alternate ease-in-out;
+    transform-origin: center center;
+  }
+  
+  .balloon-blue {
+    z-index: 1;
+    width: 4.569rem;
+    height: 5.081rem;
+    top: 0%;
+    left: 0%;
+  }
+  
+  .balloon-yellow {
+    z-index: 1;
+    width: 4.175rem;
+    height: 9.531rem;
+    right: 0%;
+  }
+  
+  .balloon-blue, .balloon-yellow {
+    animation: float 4s infinite alternate ease-in-out;
+    transform-origin: center center;
+  }
+
+  header .scroll-button {
+    display: none;
+  }
+  
+  main {
+    padding: 4rem 1.6rem;
+  }
+  
+  main h2 {
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+    margin-bottom: 1.6rem;
+  }
+  
+  main p {
+    margin-bottom: 3.2rem;
+  }
+
+  .ingredient-selection {
+    gap: 4.8rem;
+  }
+  
+  .broth-options, .meat-options {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .broth-option, .meat-option {
+    margin-bottom: 2rem;
+  }
+  
+  .order-button-container {
+    margin-top: 4.8rem;
+  }
+  
