@@ -21,3 +21,18 @@ function handleOrderButtonClick() {
     }
 }
 
+function renderOrderConfirmationPage(order) {
+    try {
+        document.querySelector('#app').innerHTML = `
+      ${OrderConfirmation(order)}
+    `
+        console.log('Order confirmation page rendered successfully.')
+
+        document.querySelector('.button-order-new').addEventListener('click', () => {
+            resetSelections()
+            renderHomePage()
+        })
+    } catch (error) {
+        console.error('Render Order Confirmation Page Error:', error)
+    }
+}
