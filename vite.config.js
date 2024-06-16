@@ -6,6 +6,12 @@ export default defineConfig({
         outDir: 'dist',
     },
     server: {
-        open: true,
+        proxy: {
+            '/api': {
+                target: 'https://api.tech.redventures.com.br',
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api/, ''),
+            },
+        },
     },
 })
