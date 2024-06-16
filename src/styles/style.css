@@ -16,20 +16,243 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.logo {
+  position: absolute;
+  z-index: 1;
+  left: 40px;
+  top: 40px;
+}
+
+header .hero {
+  background-image: url("../assets/background-red.png");
+  color: white;
+  text-align: center;
+  position: relative;
+  }
+
+header .hero-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 78.3rem;
+  height: 100vh;
+  margin: auto;
+}
+
+header .hero-text {
+  z-index: 2;
+}
+
+header .hero-title {
+  display: flex;
+  align-items: flex-end;
+}
+
+
+header h2 {
+  writing-mode: vertical-rl;
+  color: var(--color-yellow);
+  font-size: 4.8rem;
+  line-height: 5.6rem;
+  letter-spacing: 1rem;
+  font-weight: 900;
+}
+
+header h1 {
+  font-size: 16rem;
+  line-height: 10rem;
+  font-weight: 900;
+}
+
+header p {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+  margin-block: 2.4rem;
+  max-width: 20.5rem;
+  text-align: start;
+  padding-left: 0.9rem;
+}
+
+header button, .button-order-new, .order-button-container button:hover {
+  cursor: pointer;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  letter-spacing: .178rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: none;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1.6rem;
+  width: 21.3rem;
+  border-radius: 9.9rem;
+  background-color: var(--color-blue);
+}
+
+.hero-image {
+  position: relative;  
+  width: 47rem;
+  height: 68.3rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.hero-image img {
+  position: absolute;
+}
+
+.ellipse-brown {
+  z-index: 0;
+}
+
+.delivery-woman {
+  z-index: 1;
+  width: 66.6rem;
+  height: 68.3rem;
+  left: -20rem;
+  animation: rotate 4s infinite alternate ease-in-out;
+  transform-origin: center center;
+}
+
+.balloon-blue {
+  z-index: 1;
+  top: 0%;
+  left: -45%;
+}
+
+.balloon-yellow {
+  z-index: 1;
+  top: 37%;
+  right: -10%;
+}
+
+.balloon-blue, .balloon-yellow {
+  animation: float 4s infinite alternate ease-in-out;
+  transform-origin: center center;
+}
+
+main {
+  padding: 11.5rem 0;
   text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+main h2 {
+  color: var(--color-black);
+  font-weight: 900;
+  font-size: 3.2rem;
+  line-height: 4.8rem;
+  margin-bottom: 0.4rem;
   }
-  a:hover {
-    color: #747bff;
+  
+main p {
+  color: var(--color-black);
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  margin-bottom: 4.7rem;
+}
+
+.ingredient-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 9.6rem;
+}
+
+.broth-options, .meat-options {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.broth-option, .meat-option {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background);
+  border-radius: 11px;
+  box-shadow: 0 4px 12px rgba(224, 219, 191, 0.6);
+  width: 32rem;
+  height: 31.6rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.broth-option img, .meat-option img {
+  max-width: 10.4rem;
+  margin-bottom: 1.4rem;
+}
+
+.broth-option h3, .meat-option h3 {
+  color: var(--color-blue);
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+
+.broth-option p, .meat-option p {
+  color: var(--color-black);
+  max-width: 25.65rem;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  margin-bottom: 3.6rem;
+  transition: color 0.3s ease;
+}
+
+.broth-option .price, .meat-option .price {
+  color: var(--color-red);
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 2.4rem;
+  margin-bottom: 0;
+}
+
+.broth-option.selected .price, .meat-option.selected .price {
+  color: var(--color-yellow);
+
+}
+
+.broth-option.selected p, .meat-option.selected p, .broth-option.selected h3, .meat-option.selected h3 {
+  color: white;
+}
+
+.broth-option.selected, .meat-option.selected {
+  background-color: var(--color-blue);
+}
+
+.order-button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 8rem;
+}
+
+.order-button-container button {
+  cursor: pointer;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  border: none;
+  letter-spacing: .178rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 1.6rem;
+  width: 21.3rem;
+  border-radius: 9.9rem;
+  background-color: var(--color-gray);
+}
   }
   button {
     background-color: #f9f9f9;
