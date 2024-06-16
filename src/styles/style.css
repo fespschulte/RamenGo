@@ -253,8 +253,80 @@ main p {
   border-radius: 9.9rem;
   background-color: var(--color-gray);
 }
-  }
-  button {
-    background-color: #f9f9f9;
+
+/* Order Confirmation Page */
+.order-confirmation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100vh;
+  align-items: center;
+  background-color: var(--color-background);
+}
+
+.order-confirmation h2 {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  font-weight: 900;
+}
+.order-confirmation h1 {
+  font-size: 3.2rem;
+  font-weight: 900;
+}
+
+.order-summary {
+  background-image: url("../assets/background-blue.png");
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background-color: var(--color-blue);
+  color: white;
+}
+
+.order-summary h1 {
+  color: var(--color-yellow);
+  line-height: 4.752rem;
+}
+
+.order-summary img {
+  max-width: 300px;
+  margin-bottom: 20px;
+}
+
+.order-preparation {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.bowing-img {
+  margin-bottom: 1.869rem;
+}
+
+.order-preparation h2 {
+  color: var(--color-yellow);
+  margin-bottom: 1.5rem;
+}
+
+.order-preparation h1 {
+  color: var(--color-red);
+  line-height: 4rem;
+  margin-bottom: 0.4rem;
+}
+
+.order-preparation p {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 500;
+  margin-bottom: 3.2rem;
+}
   }
 }
