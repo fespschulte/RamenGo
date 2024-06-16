@@ -6,6 +6,9 @@ import OrderConfirmation from './components/OrderConfirmation'
 import { createOrder } from './api/orderApi'
 import './styles/style.css'
 
+let selectedBroth = null
+let selectedProtein = null
+
 function resetSelections() {
     selectedBroth = null
     selectedProtein = null
