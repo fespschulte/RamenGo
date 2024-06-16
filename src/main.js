@@ -36,3 +36,75 @@ function renderOrderConfirmationPage(order) {
         console.error('Render Order Confirmation Page Error:', error)
     }
 }
+
+async function renderHomePage() {
+    try {
+        document.querySelector('#app').innerHTML = `
+      ${Header()}
+      <main>
+        <div class="ingredient-selection">
+          ${await BrothSelection()}
+          ${await MeatSelection()}
+        </div>
+        ${OrderButton()}
+      </main>
+    `
+        document.querySelector('.scroll-button').addEventListener('click', () => {
+            document.querySelector('main').scrollIntoView({
+                behavior: 'smooth',
+            })
+        })
+        document.querySelector('.button-order').addEventListener('mouseover', function () {
+            const img = this.querySelector('.button-arrow')
+            img.src = './assets/arrow-button-yellow.svg'
+        })
+
+        document.querySelector('.button-order').addEventListener('mouseout', function () {
+            const img = this.querySelector('.button-arrow')
+            img.src = './assets/arrow-button-white.svg'
+        })
+        document.querySelectorAll('.broth-option').forEach((option) => {
+            option.addEventListener('click', (event) => {
+                const isSelected = event.currentTarget.classList.contains('selected')
+                document.querySelectorAll('.broth-option').forEach((opt) => {
+                    opt.querySelector('img').src = opt.getAttribute('data-image-inactive')
+                    opt.classList.remove('selected')
+                })
+
+                if (!isSelected) {
+                    selectedBroth = event.currentTarget.getAttribute('data-id')
+                    const activeImage = event.currentTarget.getAttribute('data-image-active')
+                    event.currentTarget.querySelector('img').src = activeImage
+                    event.currentTarget.classList.add('selected')
+                } else {
+                    selectedBroth = null
+                }
+            })
+        })
+
+        document.querySelectorAll('.meat-option').forEach((option) => {
+            option.addEventListener('click', (event) => {
+                const isSelected = event.currentTarget.classList.contains('selected')
+                document.querySelectorAll('.meat-option').forEach((opt) => {
+                    opt.querySelector('img').src = opt.getAttribute('data-image-inactive')
+                    opt.classList.remove('selected')
+                })
+
+                if (!isSelected) {
+                    selectedProtein = event.currentTarget.getAttribute('data-id')
+                    const activeImage = event.currentTarget.getAttribute('data-image-active')
+                    event.currentTarget.querySelector('img').src = activeImage
+                    event.currentTarget.classList.add('selected')
+                } else {
+                    selectedProtein = null
+                }
+            })
+        })
+
+        document.querySelector('.button-order').addEventListener('click', handleOrderButtonClick)
+    } catch (error) {
+        console.error('Render Home Page Error:', error)
+    }
+}
+
+renderHomePage()
