@@ -1,4 +1,3 @@
-import './styles/style.css'
 import BrothSelection from './components/BrothSelection'
 import Header from './components/Header'
 import MeatSelection from './components/MeatSelection'
