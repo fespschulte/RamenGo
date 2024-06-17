@@ -69,7 +69,7 @@ const m=function(){const e=document.createElement("link").relList;if(e&&e.suppor
         <h1>${t.description}</h1>
       </div>
       <div class="order-preparation">
-        <img class="bowing-img" src="/assets/bowing.png" alt="Order Prepared">
+        <img class="bowing-img" src="./assets/bowing.png" alt="Order Prepared">
         <h2>\u3054\u6CE8\u6587\u3042\u308A\u304C\u3068\u3046\u3054\u3056\u3044\u307E\u3059\u3002</h2>
         <h1>Your order is being prepared</h1>
         <p>Hold on, when you least expect you will be eating your r\xE1men.</p>
