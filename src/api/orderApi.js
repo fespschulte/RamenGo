@@ -1,4 +1,4 @@
-const API_BASE_URL = '/api'
+const API_BASE_URL = 'https://api.tech.redventures.com.br'
 const API_KEY = 'ZtVdh8XQ2U8pWI2gmZ7f796Vh8GllXoN7mr0djNf'
 
 export async function createOrder(brothId, proteinId) {

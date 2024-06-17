@@ -8,7 +8,7 @@ export default function OrderConfirmation(order) {
         <h1>${order.description}</h1>
       </div>
       <div class="order-preparation">
-        <img class="bowing-img" src="/assets/bowing.png" alt="Order Prepared">
+        <img class="bowing-img" src="./assets/bowing.png" alt="Order Prepared">
         <h2>ご注文ありがとうございます。</h2>
         <h1>Your order is being prepared</h1>
         <p>Hold on, when you least expect you will be eating your rámen.</p>
