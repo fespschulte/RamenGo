@@ -13,7 +13,7 @@ const m=function(){const e=document.createElement("link").relList;if(e&&e.suppor
           `).join("")}
         </div>
       </section>
-    `}function y(){return`
+    `}function v(){return`
       <header>
         <img class="logo" src="./assets/logo-ramen-go-yellow.svg" alt="Logotipo da RamenGo" />
         <div class="hero">
@@ -38,7 +38,7 @@ const m=function(){const e=document.createElement("link").relList;if(e&&e.suppor
           </div>
         </div>
       </header>
-    `}async function v(){return`
+    `}async function y(){return`
       <section class="meat-selection">
         <h2>It\u2019s time to choose (or not) your meat!</h2>
         <p>Some people love, some don\u2019t. We have options for all tastes.</p>
@@ -82,11 +82,11 @@ const m=function(){const e=document.createElement("link").relList;if(e&&e.suppor
   `}let a=null,i=null;function E(){a=null,i=null}function S(){a&&i?g(a,i).then(t=>{console.log("Order created successfully:",t),$(t)}).catch(t=>{alert("Failed to create order. Please try again."),console.error("Create Order Error:",t)}):alert("Please select both a broth and a protein.")}function $(t){try{document.querySelector("#app").innerHTML=`
       ${w(t)}
     `,console.log("Order confirmation page rendered successfully."),document.querySelector(".button-order-new").addEventListener("click",()=>{E(),u()})}catch(e){console.error("Render Order Confirmation Page Error:",e)}}async function u(){try{document.querySelector("#app").innerHTML=`
-      ${y()}
+      ${v()}
       <main>
         <div class="ingredient-selection">
           ${await f()}
-          ${await v()}
+          ${await y()}
         </div>
         ${b()}
       </main>
