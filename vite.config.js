@@ -1,10 +1,15 @@
 import { defineConfig } from 'vite'
+import { resolve } from 'path'
 
 export default defineConfig({
     base: '/RamenGo/',
-    root: './',
     build: {
         outDir: 'dist',
+        rollupOptions: {
+            input: {
+                main: resolve(__dirname, 'index.html'),
+            },
+        },
     },
     server: {
         proxy: {
