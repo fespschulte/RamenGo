@@ -1,4 +1,4 @@
-const m=function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))r(o);new MutationObserver(o=>{for(const s of o)if(s.type==="childList")for(const c of s.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&r(c)}).observe(document,{childList:!0,subtree:!0});function n(o){const s={};return o.integrity&&(s.integrity=o.integrity),o.referrerpolicy&&(s.referrerPolicy=o.referrerpolicy),o.crossorigin==="use-credentials"?s.credentials="include":o.crossorigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function r(o){if(o.ep)return;o.ep=!0;const s=n(o);fetch(o.href,s)}};m();const l="/api",d="ZtVdh8XQ2U8pWI2gmZ7f796Vh8GllXoN7mr0djNf";async function g(t,e){try{const n=JSON.stringify({brothId:t,proteinId:e}),r=await fetch(`${l}/orders`,{method:"POST",headers:{"Content-Type":"application/json","x-api-key":d},body:n});if(!r.ok)throw new Error("Network response was not ok");return await r.json()}catch(n){throw console.error("Create Order Error:",n),n}}async function h(){const t=await fetch(`${l}/proteins`,{method:"GET",headers:{"x-api-key":d}});if(!t.ok)throw new Error("Error fetching Proteins List");return await t.json()}async function p(){const t=await fetch(`${l}/broths`,{method:"GET",headers:{"x-api-key":d}});if(!t.ok)throw new Error("Error fetching Broths List");return await t.json()}async function f(){return`
+const m=function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))r(o);new MutationObserver(o=>{for(const s of o)if(s.type==="childList")for(const c of s.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&r(c)}).observe(document,{childList:!0,subtree:!0});function n(o){const s={};return o.integrity&&(s.integrity=o.integrity),o.referrerpolicy&&(s.referrerPolicy=o.referrerpolicy),o.crossorigin==="use-credentials"?s.credentials="include":o.crossorigin==="anonymous"?s.credentials="omit":s.credentials="same-origin",s}function r(o){if(o.ep)return;o.ep=!0;const s=n(o);fetch(o.href,s)}};m();const l="https://api.tech.redventures.com.br",d="ZtVdh8XQ2U8pWI2gmZ7f796Vh8GllXoN7mr0djNf";async function g(t,e){try{const n=JSON.stringify({brothId:t,proteinId:e}),r=await fetch(`${l}/orders`,{method:"POST",headers:{"Content-Type":"application/json","x-api-key":d},body:n});if(!r.ok)throw new Error("Network response was not ok");return await r.json()}catch(n){throw console.error("Create Order Error:",n),n}}async function h(){const t=await fetch(`${l}/proteins`,{method:"GET",headers:{"x-api-key":d}});if(!t.ok)throw new Error("Error fetching Proteins List");return await t.json()}async function p(){const t=await fetch(`${l}/broths`,{method:"GET",headers:{"x-api-key":d}});if(!t.ok)throw new Error("Error fetching Broths List");return await t.json()}async function f(){return`
       <section class="broth-selection">
         <h2>First things first: select your favorite broth.</h2>
         <p>It will give the whole flavor on your ramen soup.</p>
@@ -13,7 +13,7 @@ const m=function(){const e=document.createElement("link").relList;if(e&&e.suppor
           `).join("")}
         </div>
       </section>
-    `}function y(){return`
+    `}function v(){return`
       <header>
         <img class="logo" src="./assets/logo-ramen-go-yellow.svg" alt="Logotipo da RamenGo" />
         <div class="hero">
@@ -38,7 +38,7 @@ const m=function(){const e=document.createElement("link").relList;if(e&&e.suppor
           </div>
         </div>
       </header>
-    `}async function v(){return`
+    `}async function y(){return`
       <section class="meat-selection">
         <h2>It\u2019s time to choose (or not) your meat!</h2>
         <p>Some people love, some don\u2019t. We have options for all tastes.</p>
@@ -82,11 +82,11 @@ const m=function(){const e=document.createElement("link").relList;if(e&&e.suppor
   `}let a=null,i=null;function E(){a=null,i=null}function S(){a&&i?g(a,i).then(t=>{console.log("Order created successfully:",t),$(t)}).catch(t=>{alert("Failed to create order. Please try again."),console.error("Create Order Error:",t)}):alert("Please select both a broth and a protein.")}function $(t){try{document.querySelector("#app").innerHTML=`
       ${w(t)}
     `,console.log("Order confirmation page rendered successfully."),document.querySelector(".button-order-new").addEventListener("click",()=>{E(),u()})}catch(e){console.error("Render Order Confirmation Page Error:",e)}}async function u(){try{document.querySelector("#app").innerHTML=`
-      ${y()}
+      ${v()}
       <main>
         <div class="ingredient-selection">
           ${await f()}
-          ${await v()}
+          ${await y()}
         </div>
         ${b()}
       </main>
